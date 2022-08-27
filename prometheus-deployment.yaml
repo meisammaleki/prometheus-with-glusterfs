@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-deployment
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - name: prometheus-cont
+        image: m.docker-registry.ir/prom/prometheus
+        ports:
+          - containerPort: 9090
+        securityContext:
+          allowPrivilegeEscalation: true
+          privileged: true
+          readOnlyRootFilesystem: false
+          runAsUser: 0
+        volumeMounts:
+        - name: prometheus-volume
+          mountPath: /etc/prometheus/
+        - name: prometheus-volume
+          mountPath: /etc/ssl/certs
+      volumes:
+      - name: prometheus-volume
+        persistentVolumeClaim:
+          claimName: prometheus-pv-claim
+      serviceAccountName: prometheus
