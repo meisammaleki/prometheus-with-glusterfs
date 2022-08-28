@@ -8,7 +8,7 @@ spec:
   accessModes:
     - ReadWriteMany
   glusterfs:
-    endpoints: glusterfs-cluster-p
+    endpoints: glusterfs-cluster
     path: volume1
     readOnly: false
   persistentVolumeReclaimPolicy: Retain

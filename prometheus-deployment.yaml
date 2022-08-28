@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: prometheus-cont
-        image: m.docker-registry.ir/prom/prometheus
+        image: prom/prometheus
         ports:
           - containerPort: 9090
         securityContext:
@@ -26,8 +26,6 @@ spec:
         volumeMounts:
         - name: prometheus-volume
           mountPath: /etc/prometheus/
-        - name: prometheus-volume
-          mountPath: /etc/ssl/certs
       volumes:
       - name: prometheus-volume
         persistentVolumeClaim:
