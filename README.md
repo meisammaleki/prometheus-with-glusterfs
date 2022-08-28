@@ -1,9 +1,9 @@
-# prometheus-with-glusterfs
+## prometheus-with-glusterfs
 ### steps to create a Prometheus instance in Kubernetes with Persistent disk.
 ****
 You need to have a Kubernetes cluster 
 You need to have a GlusterFS cluster
-https://github.com/meisammaleki/persistent-volume-with-GlusterFS
+Link : https://github.com/meisammaleki/persistent-volume-with-GlusterFS
 
 ****
 
@@ -15,17 +15,7 @@ https://github.com/meisammaleki/persistent-volume-with-GlusterFS
 
 # Create a file with name prometheus.yml
 
-cat <<EOF > prometheus.yml
-global:
-  scrape_interval: 15s
-# Scraping Prometheus itself
-scrape_configs:
-- job_name: 'Prometheus'
-  static_configs:
-  - targets: ['prometheus-service:9090']
-EOF
-
-- cp prometheus.yml /"volume directory on main gluser server"/
+cp prometheus.yml /"volume directory on main gluser server"/
 
 ### NOTE: You will need to edit this file to add more scrape configurations.
 ****
