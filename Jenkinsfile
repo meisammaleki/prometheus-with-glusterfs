@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building Prometheus and Grafana code...'
+                echo 'Building Prometheus and Grafana code..'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing Prometheus and Grafana code...'
+                echo 'Testing Prometheus and Grafana code..'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying Prometheus and Grafana code...'
+                echo 'Deploying Prometheus and Grafana code..'
             }
         }
     }
