@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Prometheus and Grafana code..'
-                echo 'Building Prometheus and Grafana code..'
+              
             }
         }
         stage('Test') {
