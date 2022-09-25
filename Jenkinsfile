@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building Prometheus code...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing Prometheus code...'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploy Prometheus code...'
             }
         }
     }
