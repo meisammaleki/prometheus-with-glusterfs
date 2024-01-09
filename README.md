@@ -19,7 +19,7 @@ cp prometheus.yml /"volume directory on main gluser server"/
 
 ### NOTE: You will need to edit this file to add more scrape configurations.
 ****
-### Create a persistent volume and persistent volume claim
+##### Create a persistent volume and persistent volume claim
 - kubectl create -f prometheus-endpoint.yaml
 - kubectl apply -f prometheus-pv-volume.yaml
 - kubectl apply -f prometheus-pv-claim.yaml
